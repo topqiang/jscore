@@ -7,7 +7,8 @@
                                 <div class="audioIcon icon-btn"></div>
                             </div>
                             <div class="audioTime">
-                                <span class="currentTime"></span> / <span class="duration"></span>
+                                <span class="currentTime"></span>
+                                <span class="duration"></span>
                             </div>
                         <audio src="${src}"></audio>`;
         // get elements
@@ -20,21 +21,24 @@
 
         el.audio.oncanplay = function(){
         	// toggle play and pause
-        	el.audioBtn.onclick = function(){
-        		if(this.className.indexOf('icon-play') != -1){
+        	el.audioBtn.addEventListener("click", function(){togglePlay();});
+        	el.audioBtn.addEventListener("touchstart", function(){togglePlay();});
+
+        	function togglePlay(){
+        		if(el.audioBtn.className.indexOf('icon-play') != -1){
 	        		// audio currently paused
 	        		el.audio.play();
-	        		this.className = 'audioBtn icon-pause';
+	        		el.audioBtn.className = 'audioBtn icon-pause';
 	        		curTime();
 	        		el.timer = setInterval(curTime, 200);
 	        	} else {
 	        		// audio currently playing
 	        		el.audio.pause();
-	        		this.className = 'audioBtn icon-play';
+	        		el.audioBtn.className = 'audioBtn icon-play';
 	        		clearInterval(el.timer);
 	        	}
-        	};
-
+        	}
+        	
         	// when ended
         	el.audio.onended = function(){
         		el.audioBtn.className = 'audioBtn icon-play';
@@ -43,7 +47,7 @@
 
         	// display current time and duration
 			el.currentTime.innerHTML = formateTime(el.audio.currentTime);
-			el.duration.innerHTML = formateTime(el.audio.duration);
+			el.duration.innerHTML = ' / ' + formateTime(el.audio.duration);
 
 			// init drag function of the audioIcon
 			hDrag(el.audioIcon);
@@ -58,10 +62,11 @@
 		}
 		
 		function hDrag(btn){
-			btn.onmousedown = function(e){
+			btn.addEventListener('mousedown', function(e){
 				var posX = e.clientX - btn.offsetLeft;
 				// 15 is the approximate site of el.audioIcon
 				var maxDist = btn.parentNode.clientWidth - 15;
+
 				document.onmousemove = function(e){
 					var l = e.clientX - posX;
 
@@ -72,11 +77,38 @@
 					el.audio.currentTime = scale * el.audio.duration;
 					curTime();
 				};
+
 				document.onmouseup = function(){
 					document.onmousemove = null;
-				};
+				}
+
 				return false;
-			};
+			}, false);
+
+			btn.addEventListener('touchstart', function(e){
+				var posX = e.clientX - btn.offsetLeft;
+				// 15 is the approximate site of el.audioIcon
+				var maxDist = btn.parentNode.clientWidth - 15;
+
+				document.touchmove = function(e){
+					var l = e.clientX - posX;
+
+					l = l < 0 ? 0 : l > maxDist ? maxDist : l;
+					btn.style.left = l + 'px';
+
+					var scale = l/maxDist;
+					el.audio.currentTime = scale * el.audio.duration;
+					curTime();
+				};
+				
+				document.touchend = function(){
+					document.onmousemove = null;
+				}
+
+				return false;
+			}, false);
+
+			
 		}
 
 	}
