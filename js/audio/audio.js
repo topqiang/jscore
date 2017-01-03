@@ -22,7 +22,7 @@
         el.audio.oncanplay = function(){
         	// toggle play and pause
         	el.audioBtn.addEventListener("click", function(){togglePlay();});
-        	el.audioBtn.addEventListener("touchstart", function(){togglePlay();});
+        	el.audioBtn.addEventListener("touchend", function(){togglePlay();});
 
         	function togglePlay(){
         		if(el.audioBtn.className.indexOf('icon-play') != -1){
