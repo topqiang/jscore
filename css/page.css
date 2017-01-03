@@ -1,0 +1,36 @@
+.jumbotron h1 {
+    font-size: 48px;
+}
+
+.supporting .text {
+    padding: 10px;
+}
+
+.supporting button {
+    padding: 0 20px;
+}
+
+.supporting button>a {
+    color: #fff;
+    line-height: 36px;
+}
+
+.supporting button>a:hover,
+.supporting button>a:active,
+.supporting button>a:visited,
+.supporting button>a:focus {
+    text-decoration: none;
+}
+
+.supporting i {
+    display: inline;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+}
+
+.supporting audio {
+    width: 70%;
+}

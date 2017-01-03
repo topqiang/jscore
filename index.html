@@ -2,129 +2,24 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
-    <style>
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Merriweather', serif;
-    }
-    
-    body {
-        background: url(https://s3.amazonaws.com/codecademy-content/projects/junction/bg.jpg) no-repeat center center fixed;
-        background-size: cover;
-    }
-    
-    .container {
-        max-width: 940px;
-    }
-    /* Header */
-    
-    .header {
-        background: rgba(0, 0, 0, .5);
-        height: 60px;
-        padding: 10px 0;
-    }
-    
-    .logo {
-        margin: 0 30px 0;
-    }
-    
-    .nav {
-        display: inline-block;
-        margin: 0;
-        padding: 8px 0;
-    }
-    
-    .nav li {
-        color: #fff;
-        display: inline;
-        font-size: 14px;
-        margin-right: 30px;
-        padding: 0 0 5px;
-    }
-    
-    .nav li:hover {
-        border-bottom: 1px solid #00ffbc;
-        color: #00ffbc;
-        cursor: pointer;
-    }
-    /* Jumbotron */
-    
-    .jumbotron {
-        background-color: transparent;
-        text-align: center;
-        position: relative;
-        top: 30px;
-    }
-    
-    .jumbotron h1 {
-        color: #fff;
-        font-size: 60px;
-        text-shadow: 0 2px 3px rgba(0, 0, 0, .4);
-    }
-    
-    .jumbotron p {
-        color: #c9c3e6;
-        font-size: 18px;
-    }
-    /* Supporting */
-    
-    .supporting {
-        margin-top: 40px;
-        text-shadow: 0 2px 3px rgba(0, 0, 0, .4);
-    }
-    
-    .supporting .col-md-4 {
-        text-align: center;
-        color: #fff;
-        margin-bottom: 40px;
-    }
-    
-    .supporting h2 {
-        font-size: 25px;
-    }
-    
-    .supporting p {
-        font-size: 16px;
-    }
-    
-    .download {
-        position: relative;
-        top: 80px;
-        text-align: center;
-    }
-    
-    .btn-default {
-        background: rgba(0, 255, 188, 0.5);
-        border: none;
-        border-radius: 8px;
-        color: #fff;
-        font-size: 18px;
-        letter-spacing: 1.3px;
-        padding: 10px 60px;
-        margin-bottom: 100px;
-    }
-    
-    .btn-default:hover {
-        background: rgba(0, 0, 0, 0.5);
-        border: none;
-        color: #fff;
-    }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <div class="header">
         <div class="container">
-            <div class="row"> <img class="logo" src="https://s3.amazonaws.com/codecademy-content/projects/junction/logo.svg" height="36" width="36">
-                <ul class="nav">
-                    <li>About</li>
-                    <li>Contents</li>
-                    <li>Memebers</li>
-                    <li>Join</li>
+            <div class="row"> 
+                <img class="logo" src="images/jscore.png">
+                <div class="icon-menu" id="menuBtn"></div>
+                <ul class="nav" id="nav">
+                    <li><a href="./views/about.html">About</a></li>
+                    <li><a href="./views/contents.html">Contents</a></li>
+                    <li><a href="">Memebers</a></li>
+                    <li><a href="">Join</a></li>
                 </ul>
             </div>
         </div>
@@ -132,33 +27,53 @@
     <div class="jumbotron">
         <div class="container">
             <h1>JS Core Group</h1> 
-            <h3>JavaScript核心学习小组</h3>
+            <h3>JavaScript 核心学习小组</h3>
         </div>
     </div>
     <div class="supporting">
         <div class="container">
             <div class="row">
-                <div class="col-md-4"> <img class="read" src="https://s3.amazonaws.com/codecademy-content/projects/junction/read.svg" height="128" width="128">
+                <div class="col-md-4"> 
+                    <i class="icon-read"></i>
                     <h2>Review</h2>
-                    <p>Review one specific topic of JavaScript each week, digging deeper into the language.</p>
-                    <p>每周复习一个专题，打造扎实的语言基础</p>
+                    <div class="text">
+                        <p>Review one specific topic of JavaScript each week.</p>
+                        <p class="minor-text">每周复习一个专题，打造扎实的语言基础</p>
+                    </div>
                 </div>
-                <div class="col-md-4"> <img class="write" src="https://s3.amazonaws.com/codecademy-content/projects/junction/write.svg" height="128" width="128">
+                <div class="col-md-4"> 
+                    <i class="icon-pen"></i>
                     <h2>Practice</h2>
-                    <p>Three hands-on coding exercises and one speaking exercise to put knowledge into skills.</p>
-                    <p>总结、串讲、练习相结合，培养清晰的编程思路</p>
+                    <div class="text">
+                        <p>Coding and speaking exercises to put knowledge into skills.</p>
+                        <p class="minor-text">总结串讲练习结合，培养清晰的编程思路</p>
+                    </div>
+                    
                 </div>
-                <div class="col-md-4"> <img class="talk" src="https://s3.amazonaws.com/codecademy-content/projects/junction/talk.svg" height="128" width="128">
+                <div class="col-md-4"> 
+                    <i class="icon-chat"></i>
                     <h2>Discuss</h2>
-                    <p>Join the lively discussion of other JS learners like YOU!</p>
-                    <p>社群模式，与其他JS学习者交流互动</p>
+                    <div class="text">
+                        <p>Join the lively discussion of other JS learners like YOU!</p>
+                        <p class="minor-text">社群模式，与其他JS学习者交流互动</p>
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
-    <div class="download">
-        <div class="container"> <a href="#" class="btn btn-default"><span>Join</span></a> </div>
+    <div class="action text-center">
+        <div class="container"> 
+            <a href="./views/contents.html" class="btn btn-default"><span>View weekly contents</span></a> 
+        </div>
     </div>
+    <div class="footer">
+        <div class="container">
+            <div class="text-center">Page crafted with vanilla CSS and JavaScript by <a href="https://github.com/antipasjiajia">Antipasjiajia</a>.</div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

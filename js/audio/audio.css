@@ -1,0 +1,27 @@
+.audioWrapper {width:80%; position:relative; font-size: 26px; margin:0 auto; background: rgba(0,0,0,0.1);
+	display:flex; flex-direct:column; align-items: center; justify-content: center;}
+
+.audioWrapper .audioBtn{width:30px; height: 40px; padding:7px;}
+.audioWrapper .audioBar{width: 75%; height: 2px; margin: 0 10px; background-color: #fff; position:relative;}
+.audioWrapper .audioIcon{width: 40px; height: 40px;align-items: left; line-height:40px; color: rgb(14, 217, 251); position:absolute; top: -20px; left:0px;}
+.audioWrapper .audioIcon::before{position:relative; left: -13px;}
+.audioWrapper .audioTime{height: 40px; line-height:40px; font-size:12px; font-family:helvetica;}
+
+.audioWrapper .audioBtn:hover, .audioWrapper .audioBar:hover{cursor:pointer;}
+
+@media(min-width:1200px){
+	.audioWrapper .audioBar{width: 60%;}
+}
+@media(max-width:670px){
+	.audioWrapper .audioBar{width: 67%;}
+}
+@media(max-width:510px){
+	.audioWrapper .audioBar{width: 55%;}
+}
+@media(max-width:390px){
+	.audioWrapper .audioBar{width: 48%;}
+}
+@media(max-width:330px){
+	.audioWrapper .audioBar{width: 60%;}
+	.audioWrapper .audioTime{display:none;}
+}
