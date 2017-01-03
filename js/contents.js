@@ -68,7 +68,7 @@
 			footer.innerHTML = `<div class="footer">
 							        <div class="container">
 							            <div class="text-center">
-							            	Page crafted with vanilla CSS and JavaScript by <a href="https://github.com/antipasjiajia">Antipasjiajia</a>.
+							            	Page crafted by <a href="https://github.com/antipasjiajia">Antipasjiajia</a>.
 						            	</div>
 							        </div>
 							    </div>`;
