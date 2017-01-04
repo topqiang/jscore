@@ -45,7 +45,7 @@
 	                    <h2>Week ${d[i].id}</h2>
 	                    <div class="text">
 	                        <p>${d[i].topicEng}</p>
-	                        <p class="minor-text">${d[i].topicChi}</p>
+	                        <p class="ch minor-text">${d[i].topicChi}</p>
 	                        <p>
 	                        	<div class="audioWrapper" src="../assets/w${d[i].id}/w${d[i].id}-audio.mp3"></div>
                         	</p>

@@ -33,6 +33,10 @@ body:before {
     max-width: 940px;
 }
 
+.ch{
+    font-family: 'Microsoft YaHei','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif !important;
+}
+
 /* Header */
 
 .header {
